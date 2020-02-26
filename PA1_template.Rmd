@@ -53,7 +53,18 @@ plot(mean_steps$Group.1, mean_steps$x, type = "l", xlab = "5-min interval",
 
 ```
 
+Maximum 5 min interval, on average across all the days in the dataset, containing the maximum number of steps:
 
+Max **interval** is 
+```{r}
+max_id <- which.max(mean_steps$x)
+mean_steps$Group.1[max_id]
+```
+
+with the **number of steps**
+```{r}
+mean_steps$x[max_id]
+```
 
 ## Imputing missing values
 

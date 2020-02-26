@@ -92,7 +92,28 @@ plot(mean_steps$Group.1, mean_steps$x, type = "l", xlab = "5-min interval",
 
 ![](figs/fig-unnamed-chunk-6-1.png)<!-- -->
 
+Maximum 5 min interval, on average across all the days in the dataset, containing the maximum number of steps:
 
+Max **interval** is 
+
+```r
+max_id <- which.max(mean_steps$x)
+mean_steps$Group.1[max_id]
+```
+
+```
+## [1] 835
+```
+
+with the **number of steps**
+
+```r
+mean_steps$x[max_id]
+```
+
+```
+## [1] 206.1698
+```
 
 ## Imputing missing values
 
@@ -140,7 +161,7 @@ names(sum_steps_full) <- c("date", "total.steps")
 hist(sum_steps_full$total.steps, xlab = "Number of steps", main = "")
 ```
 
-![](figs/fig-unnamed-chunk-10-1.png)<!-- -->
+![](figs/fig-unnamed-chunk-12-1.png)<!-- -->
 
 Before replacing NA values:
 
@@ -211,7 +232,7 @@ ggplot(mean_steps, aes(x = interval, y = steps)) +
     geom_line() + facet_wrap(~day_type, ncol = 1) + theme_bw()
 ```
 
-![](figs/fig-unnamed-chunk-16-1.png)<!-- -->
+![](figs/fig-unnamed-chunk-18-1.png)<!-- -->
 
 
 
